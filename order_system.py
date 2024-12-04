@@ -31,7 +31,7 @@ def place_order(menu):
     while True:
         selected_order = None
         # Ask the customer what they want to order
-        print("What would you like to order?")
+        print("What would you like to order? ")
         # Create a variable for the menu item number
         i = 1
 
@@ -66,13 +66,13 @@ def place_order(menu):
         # Write a conditional statement that checks the user's input
         # The conditional statement should check for 'n' or 'N'
         while user_input.lower() != 'n' and user_input.lower() != 'y':
-            user_input = input("Would you like to keep ordering? (N)o to quit: ")
+            user_input = input("\nWould you like to keep ordering? (N) to quit: ")
             
         if user_input.lower() == 'y':
             continue
         elif user_input.lower() == 'n':
             # Write a print statement that thanks the customer for their order
-            print("Thank you for your order!")
+            print("Thank you for your order.")
 
             # Use list comprehension to create a list called prices_list,
             # which contains the total prices for each item in the order list:
@@ -119,7 +119,8 @@ def update_order(order, menu_selection, menu_items):
 
             # Ask the customer for the quantity of the menu item
             # Use the item name variable in the question
-            quantity = input(f"How many {item_name} would you like to order? ")
+            print(f"What quantity of {item_name} would you like? ")
+            quantity = input(f"(This will default to 1 if number is not entered)")
 
 
             # Check if the quantity is a number, default to 1 if not
@@ -146,7 +147,7 @@ def update_order(order, menu_selection, menu_items):
     # Print the menu selection and 
     # Tell the customer they didn't select a menu option
         print(f"You typed: {menu_selection}")
-        print("You didn't select a menu option. Please try again.")
+        print(f"{menu_selection} was not a menu option.")
 
     # Return the updated order
     return order
